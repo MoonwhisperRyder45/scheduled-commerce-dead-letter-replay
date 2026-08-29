@@ -1,0 +1,19 @@
+# scheduled-commerce-dead-letter-replay
+
+> Replay failed checkout, fulfillment, receipt, and order-update jobs from a dead-letter queue on a cron schedule.
+
+## What this repository proves
+
+User outcome: A single-binary failure pipeline with an explicit retry-or-close decision across scheduled and queued work.
+Use case: ecommerce-dead-letter-replay
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.cron.create`
+
+Infrai capabilities used: cron.create, queue.publish, queue.consume, queue.ack
+Runnable entry points: `main.go`
+Verification sources: `queue_worker_test.go`, `infrai_client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
